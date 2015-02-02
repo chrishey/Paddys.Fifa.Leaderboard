@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paddys.Fifa.Leaderboard.Dat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paddys.Fifa.Leaderboard.Tests", "Paddys.Fifa.Leaderboard.Tests\Paddys.Fifa.Leaderboard.Tests.csproj", "{1AF9838D-AE25-4DEB-B24D-B2E18DA5E14D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Paddys.Fifa.Leaderboard.Interfaces", "Paddys.Fifa.Leaderboard.Interfaces\Paddys.Fifa.Leaderboard.Interfaces.csproj", "{47E0FDE6-CB87-4E0D-A420-FCDE2A9AD867}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1AF9838D-AE25-4DEB-B24D-B2E18DA5E14D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AF9838D-AE25-4DEB-B24D-B2E18DA5E14D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AF9838D-AE25-4DEB-B24D-B2E18DA5E14D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47E0FDE6-CB87-4E0D-A420-FCDE2A9AD867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47E0FDE6-CB87-4E0D-A420-FCDE2A9AD867}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47E0FDE6-CB87-4E0D-A420-FCDE2A9AD867}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47E0FDE6-CB87-4E0D-A420-FCDE2A9AD867}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
