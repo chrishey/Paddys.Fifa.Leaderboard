@@ -65,6 +65,7 @@
     <Compile Include="Fixtures\ContextFixture.cs" />
     <Compile Include="GameTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\TestGameStoreService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
