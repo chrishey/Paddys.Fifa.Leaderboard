@@ -1,4 +1,4 @@
-﻿namespace Paddys.Fifa.Leaderboard.Interfaces.Data
+﻿namespace Paddys.Fifa.Leaderboard.Data.Cache
 {
     public interface ICache
     {
