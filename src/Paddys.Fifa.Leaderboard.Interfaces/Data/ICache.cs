@@ -1,8 +1,8 @@
 ﻿namespace Paddys.Fifa.Leaderboard.Interfaces.Data
 {
-    public interface ICache<T> where T : class
+    public interface ICache
     {
-        T Get(string key);
-        void Put(string key, T value);
+        object Get(string key);
+        void Put(string key, object value);
     }
 }
