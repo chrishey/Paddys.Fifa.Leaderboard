@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Paddys.Fifa.Leaderboard.ViewModels
@@ -11,7 +12,7 @@ namespace Paddys.Fifa.Leaderboard.ViewModels
 		[Required]
 		public string	Surname		{ get; set; }
 		
-		[Required, Range(1, 10)]
-		public int		Level		{ get; set; }
+		[Range(1, 10)]
+		public int		PlayerLevel	{ get; set; }
 	}
 }

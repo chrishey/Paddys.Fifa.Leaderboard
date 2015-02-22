@@ -13,21 +13,37 @@ namespace Paddys.Fifa.Leaderboard.Modules
 	{
 		public PlayerModule() : base("/player")
 		{
-			Get["/addplayer"] = _ => View["Shared/_AddPlayer"];
+			var player = new PlayerDetails();
+
+			Get["/addplayer"] = _ => View["Shared/_AddPlayer", player];
 
 			Post["/addplayer"] = _ =>
 				{
-					var viewModel = this.BindAndValidate<PlayerDetails>();
+//					var viewModel = this.BindAndValidate<PlayerDetails>();
 					var model = this.Bind<PlayerDetails>();
 					var result = this.Validate(model);
 
 					if (!result.IsValid)
 					{
-						return "Error";
+						return View["Shared/_AddPlayer", model];
 					}
 
-					return View["Shared/_AddPlayer"];
+					return this.Response.AsRedirect("/");
 				};
+
+			Post["/addplayerasync"] = _ =>
+			{
+				//					var viewModel = this.BindAndValidate<PlayerDetails>();
+				var model = this.Bind<PlayerDetails>();
+				var result = this.Validate(model);
+
+				if (!result.IsValid)
+				{
+					return View["Shared/_AddPlayer", model];
+				}
+
+				return this.Response.AsRedirect("/");
+			};
 		}
 	}
 }
