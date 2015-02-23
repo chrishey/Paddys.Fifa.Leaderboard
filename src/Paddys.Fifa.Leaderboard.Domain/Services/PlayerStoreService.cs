@@ -22,7 +22,7 @@ namespace Paddys.Fifa.Leaderboard.Domain.Services
 		{
 			var data = new Data.Model.Player()
 				{
-					Id = 1,
+					Id = Guid.NewGuid(),
 					FirstName = player.FirstName,
 					Surname = player.Surname,
 					Coefficient = player.PlayerLevel //needs work to figure out coefficient from a rating between 1 - 10.
