@@ -5,44 +5,58 @@ using System.Web;
 using Nancy;
 using Nancy.ModelBinding;
 using Nancy.Validation;
+using Paddys.Fifa.Leaderboard.Interfaces.Players;
+using Paddys.Fifa.Leaderboard.Models;
 using Paddys.Fifa.Leaderboard.ViewModels;
 
 namespace Paddys.Fifa.Leaderboard.Modules
 {
 	public class PlayerModule : NancyModule
 	{
-		public PlayerModule() : base("/player")
-		{
-			var player = new PlayerDetails();
+		private readonly IPlayerStoreService _playerStoreService;
 
-			Get["/addplayer"] = _ => View["Shared/_AddPlayer", player];
+		public PlayerModule(IPlayerStoreService playerStoreService)
+			: base("/player")
+		{
+			Get["/addplayer"] = _ =>
+				{
+					var player = new PlayerDetails();
+					return View["Shared/_AddPlayer", player];
+				};
 
 			Post["/addplayer"] = _ =>
 				{
-//					var viewModel = this.BindAndValidate<PlayerDetails>();
-					var model = this.Bind<PlayerDetails>();
-					var result = this.Validate(model);
+					var viewModel = this.Bind<PlayerDetails>();
+					var result = this.Validate(viewModel);
 
 					if (!result.IsValid)
 					{
-						return View["Shared/_AddPlayer", model];
+						return View["Shared/_AddPlayer", viewModel];
 					}
 
-					return this.Response.AsRedirect("/");
+					var player = new Player()
+						{
+							FirstName = viewModel.FirstName,
+							Surname = viewModel.Surname,
+							PlayerLevel = viewModel.PlayerLevel
+						};
+
+					playerStoreService.Add(player);
+
+					return Response.AsRedirect("/");
 				};
 
 			Post["/addplayerasync"] = _ =>
 			{
-				//					var viewModel = this.BindAndValidate<PlayerDetails>();
-				var model = this.Bind<PlayerDetails>();
-				var result = this.Validate(model);
+				var viewModel = this.Bind<PlayerDetails>();
+				var result = this.Validate(viewModel);
 
 				if (!result.IsValid)
 				{
-					return View["Shared/_AddPlayer", model];
+					return Response.AsJson(viewModel);
 				}
 
-				return this.Response.AsRedirect("/");
+				return Response.AsJson(viewModel, HttpStatusCode.Accepted);
 			};
 		}
 	}
