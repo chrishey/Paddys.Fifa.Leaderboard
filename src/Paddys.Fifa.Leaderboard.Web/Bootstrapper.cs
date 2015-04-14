@@ -1,9 +1,9 @@
 ﻿using Nancy.Bootstrapper;
 using Nancy.TinyIoc;
+using Paddys.Fifa.Leaderboard.Domain.Context;
 using Paddys.Fifa.Leaderboard.Domain.Services;
 using Paddys.Fifa.Leaderboard.Interfaces.Data;
 using Paddys.Fifa.Leaderboard.Interfaces.Players;
-using Paddys.Fifa.Leaderboard.Tests.Fixtures;
 
 namespace Paddys.Fifa.Leaderboard
 {
@@ -18,7 +18,7 @@ namespace Paddys.Fifa.Leaderboard
 		protected override void ApplicationStartup(TinyIoCContainer container, IPipelines pipelines)
 		{
 			container.Register<IPlayerStoreService, PlayerStoreService>().AsMultiInstance();
-			container.Register<IContext, ContextFixture>().AsMultiInstance();
+			container.Register<IContext, DataContext>().AsMultiInstance();
 		}
     }
 }

@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Nancy;
+﻿using Nancy;
 using Nancy.ModelBinding;
 using Nancy.Validation;
 using Paddys.Fifa.Leaderboard.Interfaces.Players;
-using Paddys.Fifa.Leaderboard.Models;
+using Paddys.Fifa.Leaderboard.Data.Model;
 using Paddys.Fifa.Leaderboard.ViewModels;
 
 namespace Paddys.Fifa.Leaderboard.Modules
@@ -34,7 +30,7 @@ namespace Paddys.Fifa.Leaderboard.Modules
 						return View["Shared/_AddPlayer", viewModel];
 					}
 
-					var player = new Player()
+					var player = new Player
 						{
 							FirstName = viewModel.FirstName,
 							Surname = viewModel.Surname,

@@ -1,4 +1,4 @@
-﻿using Paddys.Fifa.Leaderboard.Models;
+﻿using Paddys.Fifa.Leaderboard.Data.Model;
 
 namespace Paddys.Fifa.Leaderboard.Interfaces.Players
 {

@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Paddys.Fifa.Leaderboard.Models;
 using Paddys.Fifa.Leaderboard.Interfaces.Data;
 using Paddys.Fifa.Leaderboard.Interfaces.Players;
 
@@ -18,20 +13,15 @@ namespace Paddys.Fifa.Leaderboard.Domain.Services
 			_context = context;
 		}
 
-		public void Add(Player player)
+		public void Add(Data.Model.Player player)
 		{
-			var data = new Data.Model.Player()
-				{
-					Id = Guid.NewGuid(),
-					FirstName = player.FirstName,
-					Surname = player.Surname,
-					Coefficient = player.PlayerLevel //needs work to figure out coefficient from a rating between 1 - 10.
-				};
+			player.Id = Guid.NewGuid();
+		    player.Coefficient = 1.5; // default out the co-efficient to something in the middle?
 
-			_context.Players.Add(data);
+			_context.Players.Add(player);
 		}
 
-		public void Save(Player player)
+		public void Save(Data.Model.Player player)
 		{
 			throw new NotImplementedException();
 		}

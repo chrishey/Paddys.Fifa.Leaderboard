@@ -99,6 +99,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Paddys.Fifa.Leaderboard.Data\Paddys.Fifa.Leaderboard.Data.csproj">
+      <Project>{01ff7da2-6458-48d2-b203-b389b181a019}</Project>
+      <Name>Paddys.Fifa.Leaderboard.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Paddys.Fifa.Leaderboard.Domain\Paddys.Fifa.Leaderboard.Domain.csproj">
       <Project>{E45589F9-09B3-41D9-A524-ABA7A70DE891}</Project>
       <Name>Paddys.Fifa.Leaderboard.Domain</Name>
@@ -106,14 +110,6 @@
     <ProjectReference Include="..\Paddys.Fifa.Leaderboard.Interfaces\Paddys.Fifa.Leaderboard.Interfaces.csproj">
       <Project>{47e0fde6-cb87-4e0d-a420-fcde2a9ad867}</Project>
       <Name>Paddys.Fifa.Leaderboard.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Paddys.Fifa.Leaderboard.Models\Paddys.Fifa.Leaderboard.Models.csproj">
-      <Project>{17f437c2-4317-4fd2-8122-29810758ab72}</Project>
-      <Name>Paddys.Fifa.Leaderboard.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Paddys.Fifa.Leaderboard.Tests\Paddys.Fifa.Leaderboard.Tests.csproj">
-      <Project>{1AF9838D-AE25-4DEB-B24D-B2E18DA5E14D}</Project>
-      <Name>Paddys.Fifa.Leaderboard.Tests</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
