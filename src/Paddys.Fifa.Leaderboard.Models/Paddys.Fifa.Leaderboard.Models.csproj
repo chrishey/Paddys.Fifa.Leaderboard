@@ -1,16 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{47E0FDE6-CB87-4E0D-A420-FCDE2A9AD867}</ProjectGuid>
+    <ProjectGuid>{17F437C2-4317-4FD2-8122-29810758AB72}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Paddys.Fifa.Leaderboard.Interfaces</RootNamespace>
-    <AssemblyName>Paddys.Fifa.Leaderboard.Interfaces</AssemblyName>
+    <RootNamespace>Paddys.Fifa.Leaderboard.Models</RootNamespace>
+    <AssemblyName>Paddys.Fifa.Leaderboard.Models</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,22 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\IContext.cs" />
-    <Compile Include="Games\IGameReadService.cs" />
-    <Compile Include="Games\IGameStoreService.cs" />
-    <Compile Include="Players\IPlayerReadService.cs" />
-    <Compile Include="Players\IPlayerStoreService.cs" />
+    <Compile Include="Player\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Paddys.Fifa.Leaderboard.Data\Paddys.Fifa.Leaderboard.Data.csproj">
-      <Project>{01ff7da2-6458-48d2-b203-b389b181a019}</Project>
-      <Name>Paddys.Fifa.Leaderboard.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Paddys.Fifa.Leaderboard.Models\Paddys.Fifa.Leaderboard.Models.csproj">
-      <Project>{17f437c2-4317-4fd2-8122-29810758ab72}</Project>
-      <Name>Paddys.Fifa.Leaderboard.Models</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

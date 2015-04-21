@@ -1,0 +1,28 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<Paddys.Fifa.Leaderboard.ViewModels.PlayerDetails>
+<form method="POST">
+	<fieldset>
+		<legend>Player Details</legend>
+		
+		<label for="first-name">First Name</label>
+		<input type="text" id="first-name" name="FirstName" value="@Model.FirstName"/>
+		
+		<label for="sur-name">Sirst Name</label>
+		<input type="text" id="sur-name" name="SurName" value="@Model.Surname"/>
+		
+		<label for="player-level">Player Level</label>
+		<select id="player-level" name="PlayerLevel" selected="value="@Model.PlayerLevel">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+		</select>
+		
+		<input type="submit" name="Submit"/>
+	</fieldset>
+</form>
