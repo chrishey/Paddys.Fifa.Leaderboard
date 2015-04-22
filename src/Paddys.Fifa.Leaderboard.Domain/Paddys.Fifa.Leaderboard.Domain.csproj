@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Context\DataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\LeaderboardReadService.cs" />
     <Compile Include="Services\PlayerStoreService.cs" />
   </ItemGroup>
   <ItemGroup>

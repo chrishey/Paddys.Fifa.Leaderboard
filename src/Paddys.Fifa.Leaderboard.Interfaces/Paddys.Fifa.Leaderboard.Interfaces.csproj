@@ -42,6 +42,7 @@
     <Compile Include="Data\IContext.cs" />
     <Compile Include="Games\IGameReadService.cs" />
     <Compile Include="Games\IGameStoreService.cs" />
+    <Compile Include="Leaderboard\ILeaderboardReadService.cs" />
     <Compile Include="Players\IPlayerReadService.cs" />
     <Compile Include="Players\IPlayerStoreService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -9,5 +9,6 @@ namespace Paddys.Fifa.Leaderboard.Data.Model
         public string Surname { get; set; }
         public int PlayerLevel { get; set; }
         public double Coefficient { get; set; }
+        public int Score { get; set; }
     }
 }
