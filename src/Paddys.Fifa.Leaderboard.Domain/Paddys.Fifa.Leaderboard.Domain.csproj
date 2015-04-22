@@ -53,10 +53,6 @@
       <Project>{47E0FDE6-CB87-4E0D-A420-FCDE2A9AD867}</Project>
       <Name>Paddys.Fifa.Leaderboard.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Paddys.Fifa.Leaderboard.Models\Paddys.Fifa.Leaderboard.Models.csproj">
-      <Project>{17f437c2-4317-4fd2-8122-29810758ab72}</Project>
-      <Name>Paddys.Fifa.Leaderboard.Models</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

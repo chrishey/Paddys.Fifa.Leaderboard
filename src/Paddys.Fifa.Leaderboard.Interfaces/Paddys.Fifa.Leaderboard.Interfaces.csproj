@@ -51,10 +51,6 @@
       <Project>{01ff7da2-6458-48d2-b203-b389b181a019}</Project>
       <Name>Paddys.Fifa.Leaderboard.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Paddys.Fifa.Leaderboard.Models\Paddys.Fifa.Leaderboard.Models.csproj">
-      <Project>{17f437c2-4317-4fd2-8122-29810758ab72}</Project>
-      <Name>Paddys.Fifa.Leaderboard.Models</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

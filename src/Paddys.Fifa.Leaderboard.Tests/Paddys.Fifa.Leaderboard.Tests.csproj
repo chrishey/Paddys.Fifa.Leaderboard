@@ -89,10 +89,6 @@
       <Project>{47e0fde6-cb87-4e0d-a420-fcde2a9ad867}</Project>
       <Name>Paddys.Fifa.Leaderboard.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Paddys.Fifa.Leaderboard.Models\Paddys.Fifa.Leaderboard.Models.csproj">
-      <Project>{17F437C2-4317-4FD2-8122-29810758AB72}</Project>
-      <Name>Paddys.Fifa.Leaderboard.Models</Name>
-    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
