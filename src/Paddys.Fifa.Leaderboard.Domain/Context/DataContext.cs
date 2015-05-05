@@ -15,7 +15,16 @@ namespace Paddys.Fifa.Leaderboard.Domain.Context
 
         public IList<Player> Players
         {
-            get { throw new NotImplementedException(); }
+            get
+            {
+                return new List<Player>
+                {
+                    new Player {Id = Guid.NewGuid(), FirstName = "Chris", Surname = "Hey", Coefficient = 0.01, Score = 10},
+                    new Player {Id = Guid.NewGuid(), FirstName = "Dave", Surname = "Saunders", Coefficient = 0.1, Score = 5},
+                    new Player {Id = Guid.NewGuid(), FirstName = "Steve", Surname = "Robbins", Coefficient = 0.5, Score = 2},
+                    new Player {Id = Guid.NewGuid(), FirstName = "Paddy", Surname = "Halle", Coefficient = 1, Score = 8}
+                };
+            }
             set { throw new NotImplementedException(); }
         }
     }

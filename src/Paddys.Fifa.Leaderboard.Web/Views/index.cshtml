@@ -2,17 +2,23 @@
 
 <button value="Add Player"></button>
 
-<script id="leaderboard-table" type="text/x-handlebars-template"></script>
-<table>
-    <thead>
-    <tr>
-        <th>Player</th>
-        <th>Score</th>
-        <th>Co-efficient</th>
-    </tr>
-    </thead>
-    <tbody>
-    <!-- loop through the leader board results and add a table row for each, players name is clickable to take you into the player details -->
-    </tbody>
-</table>
+<script id="leaderboard-table" type="text/x-handlebars-template">
+    <table>
+        <thead>
+            <tr>
+                <th>Player</th>
+                <th>Score</th>
+                <th>Co-efficient</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each players}}
+            <tr>
+                <td>{{this.firstName}}, {{this.surname}}</td>
+                <td>{{this.score}}</td>
+                <td>{{this.coefficient}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
 </script>
