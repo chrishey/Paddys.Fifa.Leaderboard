@@ -10,7 +10,8 @@ namespace Paddys.Fifa.Leaderboard.Modules
         public IndexModule(ILeaderboardReadService leaderboardReadService)
         {
             _leaderboardReadService = leaderboardReadService;
-            Get["/"] = _ => GetLeaderboard();
+            Get["/"] = _ => View["index"];
+            Get["/leaderboard"] = _ => GetLeaderboard();
         }
 
         private dynamic GetLeaderboard()

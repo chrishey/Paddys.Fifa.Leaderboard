@@ -78,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\js\handlebars-v3.0.3.js" />
+    <Content Include="Content\js\leaderboard.js" />
     <Content Include="Content\nancy-logo.png" />
     <Content Include="Views\Player.cshtml" />
     <None Include="Views\Shared\_AddPlayer.cshtml" />
