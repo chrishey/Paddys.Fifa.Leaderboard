@@ -11,6 +11,10 @@ $(document).ready(function() {
     }, "json");
 });
 
+$('#add-game').click(function() {
+
+});
+
 
 //Fifa.Leaderboard.loadAndBindLeaderboard = function () {
 //    var self = this;
