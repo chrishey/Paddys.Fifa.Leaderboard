@@ -1,24 +1,38 @@
-﻿<h1>slicedbread FIFA Friday leaderboard</h1>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Paddys.Fifa.Leaderboard</title>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="@Url.Content("~/Content/js/handlebars-v3.0.3.js")"></script>
+    <script src="@Url.Content("~/Content/js/leaderboard.js")"></script>
+</head>
+<body>
 
-<button value="Add Player"></button>
+    <h1>slicedbread FIFA Friday leaderboard</h1>
 
-<script id="leaderboard-table" type="text/x-handlebars-template">
-    <table>
-        <thead>
-            <tr>
-                <th>Player</th>
-                <th>Score</th>
-                <th>Co-efficient</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#each players}}
+    <button value="Add Player">Add Player</button>
+
+    <script id="leaderboard-table" type="text/x-handlebars-template">
+        <table>
+            <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>Score</th>
+                    <th>Co-efficient</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each this}}
             <tr>
                 <td>{{this.firstName}}, {{this.surname}}</td>
                 <td>{{this.score}}</td>
                 <td>{{this.coefficient}}</td>
             </tr>
-            {{/each}}
-        </tbody>
-    </table>
-</script>
+                {{/each}}
+            </tbody>
+        </table>
+    </script>
+</body>
+</html>
+
