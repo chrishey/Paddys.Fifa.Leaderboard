@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <title>Paddys.Fifa.Leaderboard</title>
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <script src="@Url.Content("~/Content/js/handlebars-v3.0.3.js")"></script>
     <script src="@Url.Content("~/Content/js/leaderboard.js")"></script>
 </head>
@@ -34,6 +35,17 @@
             </tbody>
         </table>
     </script>
+
+<form id="add-game-form" style="display: none;">
+	<h2>Add Game</h2>
+	<label for="player1">Player 1</label>
+	<select id="player1"></select>
+	<input type="text" id="player1Score"/>
+	<label for="player2">Player 2</label>
+	<select id="player2"></select>
+	<input type="text" id="player2Score"/>
+	<input type="submit" value="Add" id="add-game-submit"/>
+</form>
 
 </body>
 </html>

@@ -9,10 +9,16 @@ $(document).ready(function() {
 
         $(document.body).append(hbTemplate(data));
     }, "json");
-});
 
-$('#add-game').click(function() {
-
+    $('#add-game').click(function () {
+    	$('#add-game-form').dialog({
+    		width: 400,
+    		modal: true,
+    		close: function (event, ui) {
+    			$('#add-game-form').remove();
+    		}
+    	});
+    });
 });
 
 
