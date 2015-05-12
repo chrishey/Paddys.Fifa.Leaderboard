@@ -19,4 +19,11 @@ $(document).ready(function() {
     		}
     	});
     });
+
+	$.get("/players", "", function(data) {
+		var template = $('#players-list').html();
+		var playerstemplate = Handlebars.compile(template);
+
+		$(document.body).append(playerstemplate(data));
+	}, "json");
 });

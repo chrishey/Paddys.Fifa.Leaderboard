@@ -37,17 +37,26 @@
         </table>
     </script>
 
-<form id="add-game-form" style="display: none;">
-	<h2>Add Game</h2>
-	<label for="player1">Player 1</label>
-	<select id="player1"></select>
-	<input type="text" id="player1Score"/>
-	<label for="player2">Player 2</label>
-	<select id="player2"></select>
-	<input type="text" id="player2Score"/>
-	<input type="submit" value="Add" id="add-game-submit"/>
-</form>
-
+<script id="players-list" type="text/x-handlebars-template">
+	<form id="add-game-form" style="display: none;">
+		<h2>Add Game</h2>
+		<label for="player1">Player 1</label>
+		<select id="player1">
+			{{#each this}}
+				<option>{{this.firstName}}, {{this.surname}}</option>
+			{{/each}}
+		</select>
+		<input type="text" id="player1Score"/>
+		<label for="player2">Player 2</label>
+		<select id="player2">
+			{{#each this}}
+				<option>{{this.firstName}}, {{this.surname}}</option>
+			{{/each}}
+		</select>
+		<input type="text" id="player2Score"/>
+		<input type="submit" value="Add" id="add-game-submit"/>
+	</form>
+</script>
 </body>
 </html>
 

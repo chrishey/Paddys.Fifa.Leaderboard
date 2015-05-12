@@ -18,6 +18,7 @@ namespace Paddys.Fifa.Leaderboard
 		protected override void ApplicationStartup(TinyIoCContainer container, IPipelines pipelines)
 		{
 			container.Register<IPlayerStoreService, PlayerStoreService>().AsMultiInstance();
+			container.Register<IPlayerReadService, PlayerReadService>().AsMultiInstance();
 			container.Register<IContext, DataContext>().AsMultiInstance();
 		}
     }
