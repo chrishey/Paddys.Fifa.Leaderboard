@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Modules\GameModule.cs" />
     <Compile Include="Modules\IndexModule.cs" />
     <Compile Include="Modules\PlayerModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

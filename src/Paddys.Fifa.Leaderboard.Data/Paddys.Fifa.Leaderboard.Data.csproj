@@ -75,6 +75,7 @@
     <Compile Include="Cache\ICache.cs" />
     <Compile Include="Cache\IDataCache.cs" />
     <Compile Include="Cache\WebCache.cs" />
+    <Compile Include="Dto\NewGame.cs" />
     <Compile Include="Model\Game.cs" />
     <Compile Include="Model\Leaderboard.cs" />
     <Compile Include="Model\Player.cs" />
