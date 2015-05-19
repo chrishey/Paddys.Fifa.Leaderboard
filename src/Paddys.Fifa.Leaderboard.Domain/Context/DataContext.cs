@@ -9,11 +9,11 @@ namespace Paddys.Fifa.Leaderboard.Domain.Context
     {
         public IList<Game> Games
         {
-            get { throw new NotImplementedException(); }
+            get { return AzureDocumentDbAccessor<Game>.DocumentDbCollection("Games"); }
             set { throw new NotImplementedException(); }
         }
 
-        public IList<Player> Players
+	    public IList<Player> Players
         {
             get
             {
