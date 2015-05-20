@@ -1,5 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Linq;
+using Microsoft.Azure.Documents;
+using Microsoft.Azure.Documents.Client;
+using Microsoft.Azure.Documents.Linq;
 using Paddys.Fifa.Leaderboard.Data.Model;
 using Paddys.Fifa.Leaderboard.Interfaces.Data;
 
@@ -7,9 +12,32 @@ namespace Paddys.Fifa.Leaderboard.Domain.Context
 {
     public class DataContext : IContext
     {
-        public IList<Game> Games
+	    private Database _database;
+	    private DocumentClient _client;
+
+	    public DataContext()
+	    {
+		    CreateClient();
+		    RetrieveOrCreateDatabase();
+	    }
+
+	    private async void RetrieveOrCreateDatabase()
+	    {
+		    _database =
+			    _client.CreateDatabaseQuery().FirstOrDefault(db => db.Id == ConfigurationManager.AppSettings["AzureDocumentDbName"]) ??
+			    await _client.CreateDatabaseAsync(new Database { Id = ConfigurationManager.AppSettings["AzureDocumentDbName"] });
+	    }
+
+	    private void CreateClient()
+	    {
+		    _client =
+			    new DocumentClient(new Uri(ConfigurationManager.ConnectionStrings["leaderboardDocumentDB"].ConnectionString),
+				    ConfigurationManager.AppSettings["leaderboardAPIKey"]);
+	    }
+
+	    public IList<Game> Games
         {
-            get { return AzureDocumentDbAccessor<Game>.DocumentDbCollection("Games"); }
+            get { return AzureDocumentDbAccessor<Game>.DocumentDbCollection("Games", _database); }
             set { throw new NotImplementedException(); }
         }
 
