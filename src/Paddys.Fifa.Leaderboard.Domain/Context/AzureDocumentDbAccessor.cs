@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Azure.Documents;
@@ -18,7 +17,7 @@ namespace Paddys.Fifa.Leaderboard.Domain.Context
 				client.CreateDocumentCollectionQuery(database.CollectionsLink).FirstOrDefault(c => c.Id == documentType) ??
 				await client.CreateDocumentCollectionAsync(database.CollectionsLink, new DocumentCollection {Id = documentType});
 
-			// parse/convert the document collection to the type
+			// parse/convert the document collection to the type?
 
 			return documents;
 		}
