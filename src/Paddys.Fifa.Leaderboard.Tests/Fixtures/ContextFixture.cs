@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.Azure.Documents;
+using Microsoft.Azure.Documents.Client;
 using Paddys.Fifa.Leaderboard.Data.Model;
 using Paddys.Fifa.Leaderboard.Interfaces.Data;
 
@@ -7,8 +9,15 @@ namespace Paddys.Fifa.Leaderboard.Tests.Fixtures
 {
     public class ContextFixture : IDisposable, IContext
     {
+        public Database Database { get; private set; }
+        public DocumentClient Client { get; private set; }
         public IList<Game> Games { get; set; }
-        public IList<Player> Players { get; set; } 
+        public IList<Player> Players { get; set; }
+        
+        public void Save()
+        {
+            return;
+        }
 
         public ContextFixture()
         {

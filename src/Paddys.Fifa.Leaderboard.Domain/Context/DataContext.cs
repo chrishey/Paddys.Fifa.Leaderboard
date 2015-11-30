@@ -12,8 +12,8 @@ namespace Paddys.Fifa.Leaderboard.Domain.Context
 {
     public class DataContext : IContext
     {
-	    private Database _database;
-	    private DocumentClient _client;
+	    public Database Database { get; private set; }
+        public DocumentClient Client { get; private set; }
 
 	    public DataContext()
 	    {
@@ -23,21 +23,21 @@ namespace Paddys.Fifa.Leaderboard.Domain.Context
 
 	    private async void RetrieveOrCreateDatabase()
 	    {
-		    _database =
-			    _client.CreateDatabaseQuery().FirstOrDefault(db => db.Id == ConfigurationManager.AppSettings["AzureDocumentDbName"]) ??
-			    await _client.CreateDatabaseAsync(new Database { Id = ConfigurationManager.AppSettings["AzureDocumentDbName"] });
+		    Database =
+			    Client.CreateDatabaseQuery().FirstOrDefault(db => db.Id == ConfigurationManager.AppSettings["AzureDocumentDbName"]) ??
+			    await Client.CreateDatabaseAsync(new Database { Id = ConfigurationManager.AppSettings["AzureDocumentDbName"] });
 	    }
 
 	    private void CreateClient()
 	    {
-		    _client =
+		    Client =
 			    new DocumentClient(new Uri(ConfigurationManager.ConnectionStrings["leaderboardDocumentDB"].ConnectionString),
 				    ConfigurationManager.AppSettings["leaderboardAPIKey"]);
 	    }
 
-	    public IList<Game> Games
+        public IList<Game> Games
         {
-            get { return AzureDocumentDbAccessor<Game>.DocumentDbCollection("Games", _database, _client).Result; }
+            get { return AzureDocumentDbAccessor<Game>.DocumentDbCollection("Games", Database, Client).Result; }
             set { throw new NotImplementedException(); }
         }
 
@@ -54,6 +54,11 @@ namespace Paddys.Fifa.Leaderboard.Domain.Context
                 };
             }
             set { throw new NotImplementedException(); }
+        }
+
+        public void Save()
+        {
+            throw new NotImplementedException();
         }
     }
 }
