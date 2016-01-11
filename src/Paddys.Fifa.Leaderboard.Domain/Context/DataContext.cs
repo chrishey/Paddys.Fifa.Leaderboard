@@ -39,7 +39,11 @@ namespace Paddys.Fifa.Leaderboard.Domain.Context
 
         public IList<Game> Games
         {
-            get { return AzureDocumentDbAccessor<Game>.DocumentDbCollection("Games", Database, Client).Result; }
+            get
+            {
+                var collection = AzureDocumentDbAccessor.DocumentDbCollection("Games", Database, Client).Result;
+                return DocumentDbConverter<Game>.DocumentsFromCollection(collection);
+            }
             set { throw new NotImplementedException(); }
         }
 

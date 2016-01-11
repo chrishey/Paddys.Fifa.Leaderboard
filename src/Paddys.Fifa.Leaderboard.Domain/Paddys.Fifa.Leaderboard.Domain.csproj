@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Context\AzureDocumentDbAccessor.cs" />
     <Compile Include="Context\DataContext.cs" />
+    <Compile Include="Context\DocumentDbConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\GameStoreService.cs" />
     <Compile Include="Services\LeaderboardReadService.cs" />
