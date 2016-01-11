@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 using Microsoft.Azure.Documents.Linq;
@@ -18,20 +19,15 @@ namespace Paddys.Fifa.Leaderboard.Domain.Context
 	    public DataContext()
 	    {
 		    CreateClient();
-		    RetrieveOrCreateDatabase();
+		    RetrieveOrCreateDatabase().Wait();
 	    }
 
-	    private async void RetrieveOrCreateDatabase()
+	    private async Task RetrieveOrCreateDatabase()
 	    {
 	        Database =
 	            Client.CreateDatabaseQuery()
-	                .FirstOrDefault(db => db.Id == ConfigurationManager.AppSettings["AzureDocumentDbName"]);
-
-	        if (Database == null)
-	        {
+	                .FirstOrDefault(db => db.Id == ConfigurationManager.AppSettings["AzureDocumentDbName"]) ??
 	            await Client.CreateDatabaseAsync(new Database {Id = ConfigurationManager.AppSettings["AzureDocumentDbName"]});
-                Database = new Database();
-	        }
 	    }
 
 	    private void CreateClient()
