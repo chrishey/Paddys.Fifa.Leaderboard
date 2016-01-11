@@ -42,7 +42,11 @@ namespace Paddys.Fifa.Leaderboard.Domain.Context
             get
             {
                 var collection = AzureDocumentDbAccessor.DocumentDbCollection("Games", Database, Client).Result;
-                return DocumentDbConverter<Game>.DocumentsFromCollection(collection);
+                var documents =
+                    Client.CreateDocumentQuery<Game>("dbs/" + Database.Id + "/colls/" + collection.Id).Select(d => d);
+                return documents.ToArray();
+
+                //return DocumentDbConverter<Game>.DocumentsFromCollection(collection);
             }
             set { throw new NotImplementedException(); }
         }

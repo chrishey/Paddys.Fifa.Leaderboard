@@ -14,7 +14,6 @@ namespace Paddys.Fifa.Leaderboard.Domain.Context
 				client.CreateDocumentCollectionQuery(database.CollectionsLink).FirstOrDefault(c => c.Id == documentType) ??
 				await client.CreateDocumentCollectionAsync(database.CollectionsLink, new DocumentCollection {Id = documentType});
 
-			// parse/convert the document collection to the type?
 		    return collection;
 		}
 	}
