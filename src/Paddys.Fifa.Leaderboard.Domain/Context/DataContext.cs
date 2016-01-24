@@ -25,7 +25,7 @@ namespace Paddys.Fifa.Leaderboard.Domain.Context
 	    private async Task RetrieveOrCreateDatabase()
 	    {
 	        Database =
-	            Client.CreateDatabaseQuery()
+	            Client.CreateDatabaseQuery().AsEnumerable()
 	                .FirstOrDefault(db => db.Id == ConfigurationManager.AppSettings["AzureDocumentDbName"]) ??
 	            await Client.CreateDatabaseAsync(new Database {Id = ConfigurationManager.AppSettings["AzureDocumentDbName"]});
 	    }
