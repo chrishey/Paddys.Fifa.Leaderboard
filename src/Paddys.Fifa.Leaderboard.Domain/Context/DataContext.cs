@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Dynamic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Azure.Documents;
@@ -68,7 +69,9 @@ namespace Paddys.Fifa.Leaderboard.Domain.Context
 
         public void Save()
         {
-            throw new NotImplementedException();
+            dynamic gameDocument = Games.First();
+            dynamic gameToUpdate = new ExpandoObject();
+            Client.ReplaceDocumentAsync(gameDocument.SelfLink, gameToUpdate);
         }
     }
 }
